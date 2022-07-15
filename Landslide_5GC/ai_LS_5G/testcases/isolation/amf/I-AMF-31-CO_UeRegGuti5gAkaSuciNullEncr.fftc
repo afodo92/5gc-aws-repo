@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.1.0.202206151802">
+<testCase version="9.0.0.202205111908">
     <general>
         <documentation>I-AMF-31-CO: UE Registration with 5G-GUTI, 5G-AKA - Compliance Testing</documentation>
         <tags>A-2TS</tags>
@@ -1013,7 +1013,7 @@
                             <nestedSteps>
                                 <item guid="6e00c8b4-0efc-4bb4-ae8c-330f4563c05c" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>automation_steps = &quot;0:1:Init:-1:-1::0;0:1:Start:-1:-1::0;-4:-4::-1:-1::0;0:0:Init:-1:-1::0;0:0:Start:-1:-1::15;0:0:Stop:0:0::15;0:1:Stop:0:0::0&quot;</body>
+                                        <body>automation_steps = &quot;0:1:Init:-1:-1::0;0:1:Start:-1:-1::0;-4:-4::-1:-1::0;0:0:Init:-1:-1::0;0:0:Start:-1:-1::15;0:0:Stop:0:0:RUNNNIG:15;0:1:Stop:0:0::0&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
