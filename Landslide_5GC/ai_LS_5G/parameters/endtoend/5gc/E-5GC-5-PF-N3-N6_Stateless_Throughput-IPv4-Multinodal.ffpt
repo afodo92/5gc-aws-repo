@@ -234,7 +234,7 @@
                         </tc3>
                     </ts0>
                 </TS1>
-                <TS1>
+                <TS2>
                     <ts0>
                         <tc0>
                             <GnbControlAddr pt:description="gNB Control Node">
@@ -333,7 +333,7 @@
                             <StartGnbRate pt:description="1.0">1.0</StartGnbRate>
                         </tc3>
                     </ts0>
-                </TS1>
+                </TS2>
                 <TS3>
                     <ts0>
                         <tc0>
