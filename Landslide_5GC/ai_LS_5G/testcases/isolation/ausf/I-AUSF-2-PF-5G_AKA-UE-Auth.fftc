@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.0.0.202203011533">
+<testCase version="9.1.0.202206261803">
     <general>
         <documentation>I-AUSF-2-PF: Nausf 5G AKA based UE Authentication - Performance Testing</documentation>
         <tags>I-2TS</tags>
@@ -5697,7 +5697,7 @@
                                                         <actionsWhenFalse>
                                                             <item actionId="Eval">
                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
-                                                                    <statement>nf_register_requests = nf_register_successes = nf_register_failures = nf_deregister_requests = nf_deregister_successes = nf_deregister_failures = nf_discover_requests = nf_discover_successes = nf_discover_failures = ue_authentication_successes = ue_authentication_failures = http_2_response_timeouts = create_ue_authentication_context_requests = create_ue_authentication_context_successes = create_ue_authentication_context_failures = x_5g_aka_confirm = x_5g_aka_confirm_successes = x_5g_aka_confirm_failures = authentication_information_retrieval_requests = authentication_information_retrieval_successes = authentication_information_retrieval_failures = authentication_confirmation_requests = authentication_confirmation_successes = authentication_confirmation_failures = sessions_established = actual_session_connects = attempted_connect_rate__sessions_second___p_i__ = attempted_disconnect_rate__sessions_second___p_i__ = attempted_session_connects = attempted_session_disconnects = actual_session_disconnects = average_session_connect_time = average_session_disconnect_time = average_session_connect_time__p_i__ = average_session_disconnect_time__p_i__ = actual_connect_rate__sessions_second_ = actual_disconnect_rate__sessions_second_ = nf_transaction_success__p_i__ = nf_transaction_success = nf_transaction_failure= &quot;&quot;</statement>
+                                                                    <statement>nf_register_requests = nf_register_successes = nf_register_failures = nf_deregister_requests = nf_deregister_successes = nf_deregister_failures = nf_discover_requests = nf_discover_successes = nf_discover_failures = ue_authentication_successes = ue_authentication_failures = http_2_response_timeouts = create_ue_authentication_context_requests = create_ue_authentication_context_successes = create_ue_authentication_context_failures = x_5g_aka_confirm = x_5g_aka_confirm_successes = x_5g_aka_confirm_failures = authentication_information_retrieval_requests = authentication_information_retrieval_successes = authentication_information_retrieval_failures = authentication_confirmation_requests = authentication_confirmation_successes = authentication_confirmation_failures = sessions_established = actual_session_connects = attempted_connect_rate__sessions_second___p_i__ = attempted_disconnect_rate__sessions_second___p_i__ = attempted_session_connects = attempted_session_disconnects = actual_session_disconnects = average_session_connect_time = average_session_disconnect_time = average_session_connect_time__p_i__ = average_session_disconnect_time__p_i__ = actual_connect_rate__sessions_second_ = actual_disconnect_rate__sessions_second_ = nf_transaction_success__p_i__ = nf_transaction_success = nf_transaction_failure = ue_authentication_successes = &quot;&quot;</statement>
                                                                 </actionProperties>
                                                             </item>
                                                             <item actionId="SkipRemainingRules">
@@ -5896,6 +5896,21 @@
                                                 <processorInfo ruleType="store">
                                                     <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
                                                         <storageLocation>create_ue_authentication_context_requests</storageLocation>
+                                                        <responseValue type="com.fnfr.documents.PropertyBoolean">false</responseValue>
+                                                        <variable type="com.fnfr.documents.PropertyBoolean">true</variable>
+                                                        <secret type="com.fnfr.documents.PropertyBoolean">false</secret>
+                                                    </ruleProperties>
+                                                </processorInfo>
+                                            </item>
+                                            <item>
+                                                <extractorInfo extractorType="query">
+                                                    <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup" declareNoMatchIssue="false">
+                                                        <query>//AMF-AUSF_N12_Consumer__UE_Authentication_Successes</query>
+                                                    </extractorProperties>
+                                                </extractorInfo>
+                                                <processorInfo ruleType="store">
+                                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
+                                                        <storageLocation>ue_authentication_successes</storageLocation>
                                                         <responseValue type="com.fnfr.documents.PropertyBoolean">false</responseValue>
                                                         <variable type="com.fnfr.documents.PropertyBoolean">true</variable>
                                                         <secret type="com.fnfr.documents.PropertyBoolean">false</secret>
@@ -7960,35 +7975,35 @@
                                                 <body>AMF-AUSF N12 Consumer</body>
                                             </command>
                                             <nestedSteps>
-                                                <item guid="1517b4ae-d50f-459c-b180-a7a554f93507" action="comment" useFieldsInCommand="false">
+                                                <item guid="f51be409-df09-43cf-8397-2924a64cef01" action="comment" useFieldsInCommand="false">
                                                     <command>
-                                                        <body>UE Authentication Successes</body>
+                                                        <body>UE Authentication Attempts</body>
                                                     </command>
                                                     <nestedSteps>
-                                                        <item guid="714aab4a-4613-462a-aeab-14cc1012f2fc" action="eval" useFieldsInCommand="false">
+                                                        <item guid="01164964-7981-4d20-a68e-096d88031411" action="eval" useFieldsInCommand="false">
                                                             <command>
-                                                                <body>name = &quot;UE Authentication Successes&quot;</body>
+                                                                <body>name = &quot;UE Authentication Attempts&quot;</body>
                                                             </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
-                                                        <item guid="bee13c26-462e-42b7-9b6d-0e12c0601d68" action="eval" useFieldsInCommand="false">
+                                                        <item guid="9e6626ae-b22e-4602-95ae-f349f8613243" action="eval" useFieldsInCommand="false">
                                                             <command>
-                                                                <body>value = ue_authentication_successes;</body>
+                                                                <body>value = create_ue_authentication_context_requests;</body>
                                                             </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
-                                                        <item guid="3709144e-292d-4739-bc65-98666758f4a8" action="comment" useFieldsInCommand="false">
+                                                        <item guid="8de8cc00-d349-4cb8-a68f-3bf48a7353ef" action="comment" useFieldsInCommand="false">
                                                             <command>
                                                                 <body>Add to list - Do not change</body>
                                                             </command>
                                                             <nestedSteps>
-                                                                <item guid="0e1974b9-ac65-4163-a22d-b65aef98b299" action="eval" useFieldsInCommand="false">
+                                                                <item guid="49d93879-a431-412d-aa18-bc4087f7ad29" action="eval" useFieldsInCommand="false">
                                                                     <command>
                                                                         <body>names.append(name)</body>
                                                                     </command>
                                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                                 </item>
-                                                                <item guid="63e184a7-ae54-4e6b-9426-a2972c9c5a3c" action="eval" useFieldsInCommand="false">
+                                                                <item guid="4b6fb206-c0ea-4801-a610-7e51b5f6383c" action="eval" useFieldsInCommand="false">
                                                                     <command>
                                                                         <body>values.append(value)</body>
                                                                     </command>
@@ -8000,35 +8015,85 @@
                                                     </nestedSteps>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </item>
-                                                <item guid="e33e9a5a-f06e-4729-8295-66d21596d817" action="comment" useFieldsInCommand="false">
+                                                <item guid="dd11c785-3924-4685-b81b-a7a464251510" action="comment" useFieldsInCommand="false">
                                                     <command>
-                                                        <body>UE Authentication Failures</body>
+                                                        <body>UE Authentication Successes</body>
                                                     </command>
                                                     <nestedSteps>
-                                                        <item guid="261c9056-0ab3-4d75-9449-df21cee4f3ea" action="eval" useFieldsInCommand="false">
+                                                        <item guid="5be675db-8d49-4bd8-88b6-8169caa58add" action="eval" useFieldsInCommand="false">
                                                             <command>
-                                                                <body>name = &quot;UE Authentication Failures&quot;</body>
+                                                                <body>name = &quot;UE Authentication Successes&quot;</body>
                                                             </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
-                                                        <item guid="78af9946-c48d-49f5-8bc8-994343dd60c5" action="eval" useFieldsInCommand="false">
+                                                        <item guid="a42c5bde-b8a6-4389-bded-3e93c7af2d15" action="eval" useFieldsInCommand="false">
                                                             <command>
-                                                                <body>value = ue_authentication__failures;</body>
+                                                                <body>value = ue_authentication_successes;</body>
                                                             </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
-                                                        <item guid="03392245-2b3c-42b7-9964-e6e4a9b83d4a" action="comment" useFieldsInCommand="false">
+                                                        <item guid="6eade0d9-6d4e-4cb3-8aae-7c599fa3b9b9" action="comment" useFieldsInCommand="false">
                                                             <command>
                                                                 <body>Add to list - Do not change</body>
                                                             </command>
                                                             <nestedSteps>
-                                                                <item guid="af1c1b92-9dd6-4b5b-b327-95b2623d5487" action="eval" useFieldsInCommand="false">
+                                                                <item guid="f8f2fe94-64a2-495a-90de-5f6eb9af836c" action="eval" useFieldsInCommand="false">
                                                                     <command>
                                                                         <body>names.append(name)</body>
                                                                     </command>
                                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                                 </item>
-                                                                <item guid="224f559d-70f7-4e6a-b2c4-69ade6767a89" action="eval" useFieldsInCommand="false">
+                                                                <item guid="7aab1645-9497-4324-8ef6-f0c8287fda41" action="eval" useFieldsInCommand="false">
+                                                                    <command>
+                                                                        <body>values.append(value)</body>
+                                                                    </command>
+                                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                </item>
+                                                            </nestedSteps>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                    </nestedSteps>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
+                                                <item guid="93749bb0-e28a-4793-a38e-27a97472b339" action="comment" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>UE Authentication Failures</body>
+                                                    </command>
+                                                    <nestedSteps>
+                                                        <item guid="3584021c-aaa5-45f0-95f6-10a845340790" action="eval" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>name = &quot;UE Authentication Failures&quot;</body>
+                                                            </command>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                        <item guid="788f575b-4c60-4244-a8dc-f30dc250c2cc" action="call" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#calculate_failure(kpi_attempted=create_ue_authentication_context_requests, kpi_successes=ue_authentication_successes)</body>
+                                                            </command>
+                                                            <postProcessing>
+                                                                <storeResponseAt>ue_authentication_failures</storeResponseAt>
+                                                                <storeResponseText>true</storeResponseText>
+                                                            </postProcessing>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                        <item guid="83644428-d0cc-4490-a4dc-df97ebc1a9c0" action="eval" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>value = ue_authentication_failures;</body>
+                                                            </command>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                        <item guid="1fdce1fa-cc45-4041-8618-2223dd813145" action="comment" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>Add to list - Do not change</body>
+                                                            </command>
+                                                            <nestedSteps>
+                                                                <item guid="792bb31f-5c74-4fe4-92b3-d09adf44149a" action="eval" useFieldsInCommand="false">
+                                                                    <command>
+                                                                        <body>names.append(name)</body>
+                                                                    </command>
+                                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                </item>
+                                                                <item guid="e643b6c5-b165-4ea4-971d-9ac721304a32" action="eval" useFieldsInCommand="false">
                                                                     <command>
                                                                         <body>values.append(value)</body>
                                                                     </command>
@@ -8171,6 +8236,16 @@
                                                             </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
+                                                        <item guid="699d81fe-d924-4b4d-bc7e-bb6793f3e718" action="call" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#calculate_failure(kpi_attempted=create_ue_authentication_context_requests, kpi_successes=create_ue_authentication_context_successes)</body>
+                                                            </command>
+                                                            <postProcessing>
+                                                                <storeResponseAt>create_ue_authentication_context_failures</storeResponseAt>
+                                                                <storeResponseText>true</storeResponseText>
+                                                            </postProcessing>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
                                                         <item guid="b0862769-49b8-4143-bbf9-2f00409de4f1" action="eval" useFieldsInCommand="false">
                                                             <command>
                                                                 <body>value = create_ue_authentication_context_failures;</body>
@@ -8289,6 +8364,16 @@
                                                             <command>
                                                                 <body>name = &quot;5G Aka Confirm Failures&quot;</body>
                                                             </command>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                        <item guid="4c8d38bb-0328-416b-a1eb-f0793db86cc9" action="call" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#calculate_failure(kpi_attempted=aka_confirm, kpi_successes=aka_confirm_successes)</body>
+                                                            </command>
+                                                            <postProcessing>
+                                                                <storeResponseAt>aka_confirm_failures</storeResponseAt>
+                                                                <storeResponseText>true</storeResponseText>
+                                                            </postProcessing>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
                                                         <item guid="3ce31aac-a404-4730-905a-414e786eabbe" action="eval" useFieldsInCommand="false">
@@ -8419,6 +8504,16 @@
                                                             </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
+                                                        <item guid="e2ab5b82-2dde-44fd-8031-ff7d501a745a" action="call" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#calculate_failure(kpi_attempted=authentication_information_retrieval_requests, kpi_successes=authentication_information_retrieval_successes)</body>
+                                                            </command>
+                                                            <postProcessing>
+                                                                <storeResponseAt>authentication_information_retrieval_failures</storeResponseAt>
+                                                                <storeResponseText>true</storeResponseText>
+                                                            </postProcessing>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
                                                         <item guid="827e5c48-7a49-41ba-8390-e6722b0a1b62" action="eval" useFieldsInCommand="false">
                                                             <command>
                                                                 <body>value = authentication_information_retrieval_failures;</body>
@@ -8537,6 +8632,16 @@
                                                             <command>
                                                                 <body>name = &quot;Authentication Confirmation Failures&quot;</body>
                                                             </command>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                        <item guid="85d40023-2da1-4b87-8020-450a175691f1" action="call" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#calculate_failure(kpi_attempted=authentication_confirmation_requests, kpi_successes=authentication_confirmation_successes)</body>
+                                                            </command>
+                                                            <postProcessing>
+                                                                <storeResponseAt>authentication_confirmation_failures</storeResponseAt>
+                                                                <storeResponseText>true</storeResponseText>
+                                                            </postProcessing>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
                                                         <item guid="cc83a3f2-2c3c-47b2-8ad9-4304ea7349b7" action="eval" useFieldsInCommand="false">
@@ -9029,7 +9134,7 @@
                                                         </item>
                                                         <item guid="b08063b9-5092-4c89-97fb-eacd55f0b9be" action="eval" useFieldsInCommand="false">
                                                             <command>
-                                                                <body>value = average_session_disconnect_time;</body>
+                                                                <body>value = average_session_disconnect_time__p_i__;</body>
                                                             </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
@@ -9666,8 +9771,8 @@
                                                         <processorInfo ruleType="chart_as_xy">
                                                             <ruleProperties type="com.fnfr.svt.execution.charting.processors.ChartUsingXYPropertyGroup" chartName="Attempted vs Actual Transaction Rate of Nodal Instance [i]" style="LINE" xAxisLabel="Attempted Transaction Rate (transaction/sec)" yAxisLabel="Actual Transaction Rate (transaction/sec)" highlightDataPoint="true" series="Transaction Rate">
                                                                 <title>Attempted vs Actual Transaction Rate</title>
-                                                                <xValue>attempted</xValue>
-                                                                <yValue>actual</yValue>
+                                                                <xValue>round(float(attempted),5)</xValue>
+                                                                <yValue>round(float(actual),5)</yValue>
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.0.0.202203011533">
+<testCase version="9.0.2.202205250744">
     <general>
         <documentation>I-CHF-10-PF: Converged Charging Release - Performance Testing</documentation>
         <tags>N-3TS</tags>
@@ -6810,8 +6810,8 @@
                                                         <processorInfo ruleType="chart_as_xy">
                                                             <ruleProperties type="com.fnfr.svt.execution.charting.processors.ChartUsingXYPropertyGroup" chartName="Attempted vs Actual Converged Charging Release Rate - Nodal Instance [i]" style="LINE" xAxisLabel="Number of attempted Converged Charging Release rate" yAxisLabel="Number of actual Converged Charging Release rate" highlightDataPoint="true" series="Converged Charging Release rate (Release(s)/sec)">
                                                                 <title>Attempted vs Actual Converged Charging Release Rate</title>
-                                                                <xValue>attempted</xValue>
-                                                                <yValue>actual</yValue>
+                                                                <xValue>round(float(attempted),5)</xValue>
+                                                                <yValue>round(float(actual),5)</yValue>
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>

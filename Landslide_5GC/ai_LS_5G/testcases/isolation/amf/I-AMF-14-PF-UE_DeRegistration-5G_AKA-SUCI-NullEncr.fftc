@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.0.0.202203011533">
+<testCase version="9.0.2.202205250744">
     <general>
         <documentation>I-AMF-14-PF: DeRegistration 5G-AKA - Performance Testing</documentation>
         <tags>D-3TS</tags>
@@ -7775,8 +7775,8 @@
                                                         <processorInfo ruleType="chart_as_xy">
                                                             <ruleProperties type="com.fnfr.svt.execution.charting.processors.ChartUsingXYPropertyGroup" chartName="Attempted vs Actual DeRegistration Rate - Nodal Instance [i]" style="LINE" xAxisLabel="Number of attempted DeRegistration Rate (DeRegs/sec)" yAxisLabel="Number of actual DeRegistration Rate (DeRegs/sec)" highlightDataPoint="true" series="DeRegistration Rate">
                                                                 <title>Attempted vs Actual DeRegistration Rate</title>
-                                                                <xValue>attempted</xValue>
-                                                                <yValue>actual</yValue>
+                                                                <xValue>round(float(attempted),5)</xValue>
+                                                                <yValue>round(float(actual),5)</yValue>
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>

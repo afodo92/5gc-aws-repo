@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.0.0.202203011533">
+<testCase version="9.0.2.202205250744">
     <general>
         <documentation>I-AMF-10-PF: PDU Session Establishment Non-Roaming – Performance Testing (PDU Session per UE)</documentation>
         <tags>N-3TS</tags>
@@ -8311,8 +8311,8 @@
                                                         <processorInfo ruleType="chart_as_xy">
                                                             <ruleProperties type="com.fnfr.svt.execution.charting.processors.ChartUsingXYPropertyGroup" chartName="Attempted vs Actual PDU Session Establishment Rate - Nodal Instance [i]" style="LINE" xAxisLabel="Number of attempted PDU Session Establishment Rate (sessions/sec)" yAxisLabel="Number of actual PDU Session Establishment Rate (sessions/sec)" highlightDataPoint="true" series="PDU Session Establishment Rate">
                                                                 <title>Attempted vs Actual PDU Session Establishment Rate</title>
-                                                                <xValue>c_rate</xValue>
-                                                                <yValue>actual</yValue>
+                                                                <xValue>round(float(c_rate),5)</xValue>
+                                                                <yValue>round(float(actual),5)</yValue>
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>

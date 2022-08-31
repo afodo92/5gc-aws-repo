@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.0.0.202203011533">
+<testCase version="9.0.2.202205250744">
     <general>
         <documentation>I-NSSF-2-PF: NS Get Request - Performance Testing</documentation>
         <tags>N-3TS</tags>
@@ -6301,8 +6301,8 @@
                                                         <processorInfo ruleType="chart_as_xy">
                                                             <ruleProperties type="com.fnfr.svt.execution.charting.processors.ChartUsingXYPropertyGroup" chartName="Attempted vs Actual Network Slice Info Get Rate - Nodal Instance [i]" style="LINE" xAxisLabel="Number of attempted Network Slice Info Get Rate (NsGetRequests/sec)" yAxisLabel="Number of actual Network Slice Info Get Rate (NsGetRequests/sec)" highlightDataPoint="true" series="NsGetRequests/sec">
                                                                 <title>Attempted vs Actual Network Slice Info Get Rate</title>
-                                                                <xValue>attempted</xValue>
-                                                                <yValue>actual</yValue>
+                                                                <xValue>round(float(attempted),5)</xValue>
+                                                                <yValue>round(float(actual),5)</yValue>
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>
