@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.1.0.202205251802">
+<testCase version="9.1.0.202206261803">
     <general>
         <documentation>I-AMF-43-PF: 5g To EPS Handover Procedure with N26 - Performance Testing</documentation>
         <tags>J-3TS</tags>
@@ -262,7 +262,7 @@
                                         </item>
                                         <item guid="91591ea3-abd7-4eed-9896-ff575b1fce68" action="eval" useFieldsInCommand="false">
                                             <command>
-                                                <body>params = params + &quot;;TC_parameters/Start_Threshold_Percent:(50,80):false&quot;</body>
+                                                <body>params = params + &quot;;TC_parameters/Start_Threshold_Percent:(50,80):false;TC_parameters/Activation_Rate:(1):true&quot;</body>
                                             </command>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>
@@ -2005,6 +2005,20 @@
                                                 <item guid="b46450c7-4761-4665-9216-b16d93fd6878" action="call" useFieldsInCommand="false">
                                                     <command>
                                                         <body>project://ai_LS_5G/utility_library/utils.fftc#print_extracted_data(data=instance_kpis, instance=last_idx)</body>
+                                                    </command>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
+                                            </nestedSteps>
+                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                        </item>
+                                        <item guid="771c01d1-a64b-4e40-8f5d-319e00516d63" action="comment" useFieldsInCommand="false">
+                                            <command>
+                                                <body>Add &quot;---&quot;</body>
+                                            </command>
+                                            <nestedSteps>
+                                                <item guid="90ef6664-548c-424d-a382-32817a617a79" action="call" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 55</body>
                                                     </command>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </item>
@@ -7637,11 +7651,11 @@
                 </item>
                 <item guid="f58eb453-c4a7-4e4a-970b-7bc025fcf803" action="json" useFieldsInCommand="false">
                     <command>
-                        <body>action=&apos;addJsonNode&apos;, editResponseStructure=&apos;false&apos;, documentName=&apos;response&apos;, pathValue=&apos;{&quot;SBA_KPIs/\\\\[[kpi_count]]&quot;:\\\\[{&quot;name&quot;:&quot;NF Register Successes&quot;,&quot;value&quot;:&quot;[nf_reg_failures]&quot;}]}&apos;</body>
+                        <body>action=&apos;addJsonNode&apos;, editResponseStructure=&apos;false&apos;, documentName=&apos;response&apos;, pathValue=&apos;{&quot;SBA_KPIs/\\\\[[kpi_count]]&quot;:\\\\[{&quot;name&quot;:&quot;NF Register Failures&quot;,&quot;value&quot;:&quot;[nf_reg_failures]&quot;}]}&apos;</body>
                     </command>
                     <applicationProperties type="com.fnfr.svt.execution.builtin.json.JsonPropertiesGroup">
                         <action inherit="false">addJsonNode</action>
-                        <pathValue inherit="false" sub="true">{&quot;SBA_KPIs/\\[[kpi_count]]&quot;:\\[{&quot;name&quot;:&quot;NF Register Successes&quot;,&quot;value&quot;:&quot;[nf_reg_failures]&quot;}]}</pathValue>
+                        <pathValue inherit="false" sub="true">{&quot;SBA_KPIs/\\[[kpi_count]]&quot;:\\[{&quot;name&quot;:&quot;NF Register Failures&quot;,&quot;value&quot;:&quot;[nf_reg_failures]&quot;}]}</pathValue>
                         <documentName inherit="false">response</documentName>
                     </applicationProperties>
                 </item>
@@ -7994,7 +8008,7 @@
                             <nestedSteps>
                                 <item guid="4f7e1c89-8e29-44c6-87e7-68925b0d4924" action="if" useFieldsInCommand="false">
                                     <command>
-                                        <body>str(handoff_failures) and str(handoff_attempts):</body>
+                                        <body>str(handoff_failures) and str(handoff_attempts) and float(handoff_attempts) != 0:</body>
                                     </command>
                                     <nestedSteps>
                                         <item guid="d5eaa965-c290-4c1e-8db1-564a760b2263" action="eval" useFieldsInCommand="false">

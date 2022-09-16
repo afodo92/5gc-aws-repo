@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.0.0.202203240704">
+<testCase version="9.1.0.202208130455">
     <general>
         <documentation>I-AMF-19-PF: Inter NG-RAN N2 Handover Execution - Performance Testing </documentation>
         <tags>L-3TS</tags>
@@ -2738,8 +2738,8 @@
                                                         <processorInfo ruleType="chart_as_xy">
                                                             <ruleProperties type="com.fnfr.svt.execution.charting.processors.ChartUsingXYPropertyGroup" chartName="Attempted vs Actual Handover Rate of Nodal Instance [i]" style="LINE" xAxisLabel="Attempted Handover Rate (sessions/sec)" yAxisLabel="Actual Handover Rate (sessions/sec)" highlightDataPoint="true" series="Handover Rate">
                                                                 <title>Attempted vs Actual Handover Rate</title>
-                                                                <xValue>attempted</xValue>
-                                                                <yValue>actual</yValue>
+                                                                <xValue>round(float(attempted),5)</xValue>
+                                                                <yValue>round(float(actual),5)</yValue>
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>

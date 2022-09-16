@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.1.0.202208041812">
+<testCase version="9.1.0.202208130455">
     <general>
         <documentation>S-UDM-1-SA: Authorization Token Verification Failure handling within one PLMN (Expired Access Token) - Security Testing</documentation>
         <tags>I-2TS</tags>
@@ -3520,12 +3520,12 @@
                         </item>
                         <item guid="f7b455c0-f734-4e41-8bfc-b281fa02b1ab" action="comment" useFieldsInCommand="false">
                             <command>
-                                <body>Number of Consumer NF Service Attempts</body>
+                                <body>Number of AMF Registration for 3GPP Access Attempts</body>
                             </command>
                             <nestedSteps>
                                 <item guid="871c26f6-024b-44cd-a524-28dbcd8a2b4f" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;Number of Consumer NF Service Attempts&quot;</body>
+                                        <body>key_tag = &quot;Number of AMF Registration for 3GPP Access Attempts&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3592,12 +3592,12 @@
                         </item>
                         <item guid="a1a599ac-947e-4fb1-aa39-949f5840ac6a" action="comment" useFieldsInCommand="false">
                             <command>
-                                <body>Number of Consumer NF Successes</body>
+                                <body>Number of AMF Registration for 3GPP Access Successes</body>
                             </command>
                             <nestedSteps>
                                 <item guid="0f01ab9b-66da-49a7-bb60-c061bf8a2c73" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;Number of Consumer NF Successes&quot;</body>
+                                        <body>key_tag = &quot;Number of AMF Registration for 3GPP Access Successes&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3664,12 +3664,12 @@
                         </item>
                         <item guid="56c5b7aa-52b5-413f-831e-59e6e8186985" action="comment" useFieldsInCommand="false">
                             <command>
-                                <body>Number of Consumer NF Failures</body>
+                                <body>Number of AMF Registration for 3GPP Access Failures</body>
                             </command>
                             <nestedSteps>
                                 <item guid="153c10b6-2bfe-41e5-9917-4c5834587dfd" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;Number of Consumer NF Failures&quot;</body>
+                                        <body>key_tag = &quot;Number of AMF Registration for 3GPP Access Failures&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>

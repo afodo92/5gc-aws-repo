@@ -1738,6 +1738,7 @@
                                             <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
                                                 <stepProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 <sessionProperties type="com.fnfr.svt.applications.wireshark.WiresharkSessionProperties">
+                                                    <advancedDisplayOptions inherit="false">-o nas-5gs.null_decipher:TRUE</advancedDisplayOptions>
                                                     <sessionbuilderInitializeAction type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </sessionProperties>
                                                 <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
@@ -5052,6 +5053,41 @@
                                                                     <item>
                                                                         <extractorInfo extractorType="query">
                                                                             <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
+                                                                                <query>boolean(details/item[field=&apos;nr-rrc.q_RxLevMin&apos;])</query>
+                                                                            </extractorProperties>
+                                                                        </extractorInfo>
+                                                                        <processorInfo ruleType="assert">
+                                                                            <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                                                                <expression>value == &quot;true&quot;</expression>
+                                                                                <actionsWhenTrue>
+                                                                                    <item actionId="PassTestIfNotAlreadyFailed">
+                                                                                        <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                                    </item>
+                                                                                    <item actionId="DeclareExecutionIssue">
+                                                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                                                            <message>  + IE &quot;q-RxLevMin&quot; is present</message>
+                                                                                        </actionProperties>
+                                                                                    </item>
+                                                                                </actionsWhenTrue>
+                                                                                <actionsWhenFalse>
+                                                                                    <item actionId="DeclareExecutionIssue">
+                                                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
+                                                                                            <message>  + IE &quot;q-RxLevMin&quot; is NOT present</message>
+                                                                                        </actionProperties>
+                                                                                    </item>
+                                                                                    <item actionId="FailTest">
+                                                                                        <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                                    </item>
+                                                                                    <item actionId="ExitProcedure">
+                                                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExitProcedurePropertyGroup"/>
+                                                                                    </item>
+                                                                                </actionsWhenFalse>
+                                                                            </ruleProperties>
+                                                                        </processorInfo>
+                                                                    </item>
+                                                                    <item>
+                                                                        <extractorInfo extractorType="query">
+                                                                            <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
                                                                                 <query>boolean(details/item[field=&apos;nr-rrc.s_IntraSearchP&apos;])</query>
                                                                             </extractorProperties>
                                                                         </extractorInfo>
@@ -6683,14 +6719,14 @@
                                                                                     </item>
                                                                                     <item actionId="DeclareExecutionIssue">
                                                                                         <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                            <message>  + IE &quot;Authentication request message&quot; is present </message>
+                                                                                            <message>  + IE &quot;Authentication request message identity&quot; is present </message>
                                                                                         </actionProperties>
                                                                                     </item>
                                                                                 </actionsWhenTrue>
                                                                                 <actionsWhenFalse>
                                                                                     <item actionId="DeclareExecutionIssue">
                                                                                         <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                            <message>  + IE &quot;Authentication request message&quot;  is NOT present</message>
+                                                                                            <message>  + IE &quot;Authentication request message identity&quot;  is NOT present</message>
                                                                                         </actionProperties>
                                                                                     </item>
                                                                                     <item actionId="FailTest">

@@ -6529,10 +6529,10 @@
                 </item>
                 <item guid="5174724e-248c-46c9-b29e-a06618fbf1a6" action="message" useFieldsInCommand="false">
                     <command>
-                        <body>Information:The targeted end rate (c_rate) in terms of simultaneous periodic registration events per second: &quot;[targeted_end_rate]&quot; Registration(s)/sec</body>
+                        <body>Information:The targeted end rate (t_rate) in terms of simultaneous periodic registration events per second: &quot;[targeted_end_rate]&quot; Registration(s)/sec</body>
                     </command>
                     <applicationProperties type="com.fnfr.svt.execution.builtin.exec.MessagePropertyGroup">
-                        <message inherit="false">The targeted end rate (c_rate) in terms of simultaneous periodic registration events per second: &quot;[targeted_end_rate]&quot; Registration(s)/sec</message>
+                        <message inherit="false">The targeted end rate (t_rate) in terms of simultaneous periodic registration events per second: &quot;[targeted_end_rate]&quot; Registration(s)/sec</message>
                     </applicationProperties>
                 </item>
                 <item guid="7660a933-1f09-4cc5-b177-db10c456397d" action="message" useFieldsInCommand="false">

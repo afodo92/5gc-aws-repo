@@ -602,6 +602,12 @@
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
+                        <item guid="006cb0f7-5e51-41d2-a4dc-48af141763ae" action="eval" useFieldsInCommand="false">
+                            <command>
+                                <body>params = params + &quot;;TC_parameters/Starting_SUPI:&lt;1,15&gt;:false;TC_parameters/Starting_IMEI:&lt;1,14&gt;:false;TC_parameters/Starting_SUPI:(1,999999999999999):false;TC_parameters/Starting_IMEI:(1,99999999999999):false&quot;</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
                         <item guid="4049843f-87ac-4061-aa8f-32ab60ffa648" action="call" useFieldsInCommand="false">
                             <command>
                                 <body>project://ai_LS_5G/utility_library/utils.fftc#validate_params(params=params, validate_ts_percentage=&quot;true&quot;)</body>
@@ -1171,7 +1177,7 @@
                                 </item>
                                 <item guid="391d0b3d-88be-47c0-903a-72c18210bbf2" action="message" useFieldsInCommand="false">
                                     <command>
-                                        <body>Error:The number of UEs entered must be divisible by 1 Bucket or equal to instance number * 4.</body>
+                                        <body>Error:The number of UEs entered must be divisible by 1 Bucket or equal to [expected_min_session].</body>
                                     </command>
                                     <postProcessing>
                                         <analysisRules>
@@ -1194,7 +1200,7 @@
                                     </postProcessing>
                                     <applicationProperties type="com.fnfr.svt.execution.builtin.exec.MessagePropertyGroup">
                                         <severity inherit="false">Error</severity>
-                                        <message inherit="false">The number of UEs entered must be divisible by 1 Bucket or equal to instance number * 4.</message>
+                                        <message inherit="false">The number of UEs entered must be divisible by 1 Bucket or equal to [expected_min_session].</message>
                                     </applicationProperties>
                                 </item>
                                 <item guid="02d3cd41-4a51-423f-97cf-4093a814a2e2" action="exit" useFieldsInCommand="false">
@@ -4224,7 +4230,7 @@
                                                                         </extractorInfo>
                                                                         <processorInfo ruleType="assert">
                                                                             <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
-                                                                                <expression>kpi_result == &quot;FAIL&quot; and t_load == reduce_bucket_size</expression>
+                                                                                <expression>kpi_result == &quot;FAIL&quot; and t_load == int(gget(&apos;ues_per_bucket&apos;))</expression>
                                                                                 <actionsWhenTrue>
                                                                                     <item actionId="FailTest">
                                                                                         <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>

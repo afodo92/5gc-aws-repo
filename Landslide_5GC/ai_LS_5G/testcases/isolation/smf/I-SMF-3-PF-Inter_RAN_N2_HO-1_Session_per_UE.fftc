@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.1.0.202208130455">
+<testCase version="9.1.0.202206261803">
     <general>
         <documentation>I-SMF-3-PF: PDU Session Modification Inter-RAN Xn Handover - Performance Testing </documentation>
         <tags>G-3TS</tags>
@@ -3064,20 +3064,6 @@
                         <body>Sanity checking with c_load_ts =1 UE and c_rate_ts=1 HO/sec (1 single UE with 1 NAS Session Modification)</body>
                     </command>
                     <nestedSteps>
-                        <item guid="8a0f6c02-f9e0-44dd-9035-ad4d4589e8c4" action="comment" useFieldsInCommand="false">
-                            <command>
-                                <body>Add &quot;---&quot;</body>
-                            </command>
-                            <nestedSteps>
-                                <item guid="4bc37414-ddb5-41d6-8111-0647f838ad90" action="call" useFieldsInCommand="false">
-                                    <command>
-                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
-                                    </command>
-                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                </item>
-                            </nestedSteps>
-                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                        </item>
                         <item guid="e840b561-7b88-468b-822f-6a8046b7c4e8" action="message" useFieldsInCommand="false">
                             <command>
                                 <body>Information:Sanity checking with c_load_ts = 1 session and c_rate_ts = 1 session/sec (1 single UE with 1 NAS PDU Session Modification)</body>

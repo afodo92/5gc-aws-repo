@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.1.0.202205251802">
+<testCase version="9.1.0.202206261803">
     <general>
         <documentation>I-AMF-9-CP: UE Requested PDU Session Establishment NonRoaming - Capacity Testing</documentation>
         <tags>N-3TS</tags>
@@ -2737,6 +2737,20 @@
                                                     </nestedSteps>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </item>
+                                                <item guid="13a77b67-ea73-4a36-b36b-688c069b4d7f" action="comment" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>Add &quot;---&quot;</body>
+                                                    </command>
+                                                    <nestedSteps>
+                                                        <item guid="1092a59e-772b-4fbd-b07e-a035e79aa1d4" action="call" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                                                            </command>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                    </nestedSteps>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
                                             </nestedSteps>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>
@@ -3609,20 +3623,6 @@
                                                 <body>Run test instance with 80%</body>
                                             </command>
                                             <nestedSteps>
-                                                <item guid="35461e92-d48c-406b-9518-2eeabe40da80" action="comment" useFieldsInCommand="false">
-                                                    <command>
-                                                        <body>Add &quot;---&quot;</body>
-                                                    </command>
-                                                    <nestedSteps>
-                                                        <item guid="2333f77d-0d5c-44cc-919d-6b747fe87f50" action="call" useFieldsInCommand="false">
-                                                            <command>
-                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
-                                                            </command>
-                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                        </item>
-                                                    </nestedSteps>
-                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                </item>
                                                 <item guid="cb9668f4-8f34-4c41-9ce6-329bd6870426" action="eval" useFieldsInCommand="false">
                                                     <command>
                                                         <body>start_threshold_percent = int(float(start_threshold_percent))</body>
@@ -4255,20 +4255,6 @@
                                                                 <body>Increase 10% Targeted Session Establishment</body>
                                                             </command>
                                                             <nestedSteps>
-                                                                <item guid="33e212d5-38d0-4948-9aca-c141fa17d0f2" action="comment" useFieldsInCommand="false">
-                                                                    <command>
-                                                                        <body>Add &quot;---&quot;</body>
-                                                                    </command>
-                                                                    <nestedSteps>
-                                                                        <item guid="8da8a7ca-3039-4875-aa1d-3765de346462" action="call" useFieldsInCommand="false">
-                                                                            <command>
-                                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
-                                                                            </command>
-                                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                                        </item>
-                                                                    </nestedSteps>
-                                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                                </item>
                                                                 <item guid="e5e20df7-7e14-429d-860a-0a04ff082335" action="eval" useFieldsInCommand="false">
                                                                     <command>
                                                                         <body>t_load_old = int(t_load)</body>
@@ -8598,6 +8584,20 @@
                                 <storeResponseAt>response</storeResponseAt>
                                 <storeResponseText>true</storeResponseText>
                             </postProcessing>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="4501a245-0470-4914-89e0-c9d9c924dea6" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Add &quot;---&quot;</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="51a49d92-3457-41ff-a33a-78551b5d87b7" action="call" useFieldsInCommand="false">
+                            <command>
+                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                            </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
                     </nestedSteps>

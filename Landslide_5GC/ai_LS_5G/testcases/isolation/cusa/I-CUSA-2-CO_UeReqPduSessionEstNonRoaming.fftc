@@ -3103,7 +3103,7 @@
                                 </item>
                                 <item guid="e5f4c9d7-5593-4551-aca0-ab49d7147c38" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>add_to_kpi = &quot;true&quot;</body>
+                                        <body>add_to_kpi = &quot;false&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3139,7 +3139,7 @@
                             <nestedSteps>
                                 <item guid="51af2c9a-2237-446e-b5b7-810cb7d7d02a" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;DL RRC Msg Transfer Rcvd&quot;</body>
+                                        <body>key_tag = &quot;DL RRC Message Transfer&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3211,7 +3211,7 @@
                             <nestedSteps>
                                 <item guid="1e2041bc-6dbc-4389-bcac-fb391d70967b" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;UL RRC Msg Transfer Sent&quot;</body>
+                                        <body>key_tag = &quot;UL RRC Message Transfer&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3278,12 +3278,12 @@
                         </item>
                         <item guid="07e9cc49-6c9b-49c0-b959-11b0795fe740" action="comment" useFieldsInCommand="false">
                             <command>
-                                <body>UE Context Modification Requests Received</body>
+                                <body>UE Context Modification Response</body>
                             </command>
                             <nestedSteps>
                                 <item guid="89e5d010-5e83-4164-9181-af7c86b23d9e" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;UE Context Modification Requests Received&quot;</body>
+                                        <body>key_tag = &quot;UE Context Modification Response&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3350,12 +3350,12 @@
                         </item>
                         <item guid="97041485-142a-4448-9d36-c4eab18a89da" action="comment" useFieldsInCommand="false">
                             <command>
-                                <body>UE Context Modification Responses Sent</body>
+                                <body>UE Context Modification Request</body>
                             </command>
                             <nestedSteps>
                                 <item guid="bfe7865f-4fc6-44c0-9220-349cd3e212eb" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;UE Context Modification Responses Sent&quot;</body>
+                                        <body>key_tag = &quot;UE Context Modification Request&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -4155,7 +4155,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -4165,7 +4165,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -4193,7 +4193,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -4203,7 +4203,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -4231,7 +4231,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;SRBID&quot; is present </message>
+                                                                                                    <message>+ The &quot;SRBID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -4241,7 +4241,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;SRBID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;SRBID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -4269,7 +4269,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;RRCContainer&quot; is present </message>
+                                                                                                    <message>+ The RRC-Container is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -4279,7 +4279,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;RRCContainer&quot; is NOT present </message>
+                                                                                                    <message>The RRC-Container is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -4620,7 +4620,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -4630,7 +4630,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -4658,7 +4658,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -4668,7 +4668,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -4830,22 +4830,7 @@
                                                                             <item>
                                                                                 <extractorInfo extractorType="query">
                                                                                     <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
-                                                                                        <query>//proto[@name = &quot;f1ap&quot;]//field[contains(@show,&apos;DRBs-ToBeSetupMod-List&apos;)]//field[@name=&quot;f1ap.qoSInformation&quot;]//field[@name=&quot;f1ap.qoSFlowLevelQoSParameters_element&quot;]//field[@name=&quot;f1ap.priorityLevel&quot;]/@show</query>
-                                                                                    </extractorProperties>
-                                                                                </extractorInfo>
-                                                                                <processorInfo ruleType="store">
-                                                                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
-                                                                                        <storageLocation>level_qos</storageLocation>
-                                                                                        <responseValue type="com.fnfr.documents.PropertyBoolean">false</responseValue>
-                                                                                        <variable type="com.fnfr.documents.PropertyBoolean">true</variable>
-                                                                                        <secret type="com.fnfr.documents.PropertyBoolean">false</secret>
-                                                                                    </ruleProperties>
-                                                                                </processorInfo>
-                                                                            </item>
-                                                                            <item>
-                                                                                <extractorInfo extractorType="query">
-                                                                                    <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
-                                                                                        <query>boolean(//proto[@name = &quot;f1ap&quot;]//field[contains(@show,&apos;DRBs-ToBeSetupMod-List&apos;)]//field[@name=&quot;f1ap.qoSInformation&quot;]//field[@name=&quot;f1ap.qoSFlowLevelQoSParameters_element&quot;]//field[@name=&quot;f1ap.priorityLevel&quot;]/@show)</query>
+                                                                                        <query>boolean(//proto[@name = &quot;f1ap&quot;]//field[@name=&quot;f1ap.qoSInformation&quot;]/field[@name=&quot;f1ap.choice_extension_element&quot;]/@showname)</query>
                                                                                     </extractorProperties>
                                                                                 </extractorInfo>
                                                                                 <processorInfo ruleType="assert">
@@ -4854,7 +4839,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;Level of QoS Parameters&quot; is present in &quot;DRB to be Setup List&quot; with [level_qos]</message>
+                                                                                                    <message>+ The &quot;CHOICE QoS Information&quot; is present in &quot;DRB to be Setup List&quot;</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -4864,7 +4849,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;Level of QoS Parameters&quot; is NOT present in &quot;DRB to be Setup List&quot;</message>
+                                                                                                    <message>The &quot;CHOICE QoS Information&quot; is NOT present in &quot;DRB to be Setup List&quot;</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5405,7 +5390,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -5415,7 +5400,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5443,7 +5428,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -5453,7 +5438,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5521,6 +5506,44 @@
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
                                                                                                     <message>The &quot;DRB ID&quot; is NOT present in &quot;DRB to be Setup List&quot;</message>
+                                                                                                </actionProperties>
+                                                                                            </item>
+                                                                                            <item actionId="FailTest">
+                                                                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                                            </item>
+                                                                                            <item actionId="ExitProcedure">
+                                                                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExitProcedurePropertyGroup"/>
+                                                                                            </item>
+                                                                                            <item actionId="SkipRemainingRules">
+                                                                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                                            </item>
+                                                                                        </actionsWhenFalse>
+                                                                                    </ruleProperties>
+                                                                                </processorInfo>
+                                                                            </item>
+                                                                            <item>
+                                                                                <extractorInfo extractorType="query">
+                                                                                    <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
+                                                                                        <query>boolean(//proto[@name = &quot;f1ap&quot;]//field[@name=&quot;f1ap.DRBs_SetupMod_List&quot;]//field[@showname=&quot;DRBs-SetupMod-Item&quot;]//field[@name=&quot;f1ap.dLUPTNLInformation&quot;])</query>
+                                                                                    </extractorProperties>
+                                                                                </extractorInfo>
+                                                                                <processorInfo ruleType="assert">
+                                                                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                                                                        <expression>value == &quot;true&quot;</expression>
+                                                                                        <actionsWhenTrue>
+                                                                                            <item actionId="DeclareExecutionIssue">
+                                                                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                                                                    <message>+ The &quot;DL UP TNL Information&quot; is present in &quot;DRB to be Setup List&quot;</message>
+                                                                                                </actionProperties>
+                                                                                            </item>
+                                                                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                                            </item>
+                                                                                        </actionsWhenTrue>
+                                                                                        <actionsWhenFalse>
+                                                                                            <item actionId="DeclareExecutionIssue">
+                                                                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
+                                                                                                    <message>The &quot;DL UP TNL Information&quot; is NOT present in &quot;DRB to be Setup List&quot;</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5766,7 +5789,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -5776,7 +5799,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5804,7 +5827,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -5814,7 +5837,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5842,7 +5865,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The SRB ID is present </message>
+                                                                                                    <message>+ The SRB ID is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -5852,7 +5875,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The SRB ID is NOT present </message>
+                                                                                                    <message>The SRB ID is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5880,7 +5903,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The RRCContainer is present</message>
+                                                                                                    <message>+ The RRC-Container is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -5890,7 +5913,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The RRCContainer is NOT present</message>
+                                                                                                    <message>The RRC-Container is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -5918,7 +5941,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The RRCTransactionIdentifier is present</message>
+                                                                                                    <message>+ The RRC-TransactionIdentifier is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -5928,7 +5951,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The RRCTransactionIdentifier is NOT present</message>
+                                                                                                    <message>The RRC-TransactionIdentifier is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -6317,7 +6340,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-CU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -6327,7 +6350,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-CU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -6355,7 +6378,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present </message>
+                                                                                                    <message>+ The &quot;gNB-DU UE F1AP ID&quot; is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -6365,7 +6388,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present </message>
+                                                                                                    <message>The &quot;gNB-DU UE F1AP ID&quot; is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -6431,7 +6454,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The RRCContainer is present</message>
+                                                                                                    <message>+ The RRC-Container is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -6441,7 +6464,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The RRCContainer is NOT present</message>
+                                                                                                    <message>The RRC-Container is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">
@@ -6469,7 +6492,7 @@
                                                                                         <actionsWhenTrue>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
-                                                                                                    <message>+ The rrcTransactionIdentifier is present</message>
+                                                                                                    <message>+ The RRC-TransactionIdentifier is present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="PassTestIfNotAlreadyFailed">
@@ -6479,7 +6502,7 @@
                                                                                         <actionsWhenFalse>
                                                                                             <item actionId="DeclareExecutionIssue">
                                                                                                 <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="Warning">
-                                                                                                    <message>The rrcTransactionIdentifier is NOT present</message>
+                                                                                                    <message>The RRC-TransactionIdentifier is NOT present</message>
                                                                                                 </actionProperties>
                                                                                             </item>
                                                                                             <item actionId="FailTest">

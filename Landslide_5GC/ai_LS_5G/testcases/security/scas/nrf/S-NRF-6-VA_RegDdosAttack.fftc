@@ -2082,6 +2082,20 @@
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
+                        <item guid="d5017284-77eb-4355-bb5e-a50b92e196ed" action="comment" useFieldsInCommand="false">
+                            <command>
+                                <body>Add &quot;---&quot;</body>
+                            </command>
+                            <nestedSteps>
+                                <item guid="d33649e6-1eb9-4db3-9908-fd1180475aa9" action="call" useFieldsInCommand="false">
+                                    <command>
+                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                                    </command>
+                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                </item>
+                            </nestedSteps>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
                         <item guid="f3abda71-f1de-4538-a684-a851ca0469f1" action="call" useFieldsInCommand="false">
                             <command>
                                 <body>execute_nodal_tests(run_data_list=run_data_list, session_capacity=t_load, targeted_end_rate=t_rate, instance_number=instance_number, enable_port_capture=enable_port_capture, percentage_list=percentage_list, is_b2b=is_b2b, timeout=timeout)</body>
@@ -4557,7 +4571,7 @@
                             <nestedSteps>
                                 <item guid="72d821ed-d8cb-43b7-8689-99883e5ceb85" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;Number of NF Register Attempts&quot;</body>
+                                        <body>key_tag = &quot;Number of NF Register Requests&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -4701,7 +4715,7 @@
                             <nestedSteps>
                                 <item guid="27c1e59f-c865-474f-84f8-f6aec1d15139" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;NF Register Failures&quot;</body>
+                                        <body>key_tag = &quot;Number of NF Register Failures&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -5101,7 +5115,7 @@
                                 </item>
                                 <item guid="a8b01aee-9ef5-4e31-b072-6ea0272351b6" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>request_tag =  &apos;Number of NF Register&apos;</body>
+                                        <body>request_tag =  &apos;Number of NF Register Requests&apos;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -5113,7 +5127,7 @@
                                 </item>
                                 <item guid="5f1a8847-c306-4cf6-b365-a5d373b4abc6" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>success_tag =&apos;Number of NF Registe Success&apos;</body>
+                                        <body>success_tag =&apos;Number of NF Register Successes&apos;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -5427,7 +5441,7 @@
                                                     <item>
                                                         <extractorInfo extractorType="query">
                                                             <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
-                                                                <query>mapped/Json/KPIs/item[name=&apos;Number of NF Register Attempts&apos;]/value</query>
+                                                                <query>mapped/Json/KPIs/item[name=&apos;Number of NF Register Requests&apos;]/value</query>
                                                             </extractorProperties>
                                                         </extractorInfo>
                                                         <processorInfo ruleType="assert">

@@ -7379,7 +7379,7 @@
                                                                 <actionsWhenFalse>
                                                                     <item actionId="Eval">
                                                                         <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
-                                                                            <statement>attempted = value</statement>
+                                                                            <statement>attempted = round(float(value),5)</statement>
                                                                         </actionProperties>
                                                                     </item>
                                                                 </actionsWhenFalse>
@@ -7405,7 +7405,7 @@
                                                                 <actionsWhenFalse>
                                                                     <item actionId="Eval">
                                                                         <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
-                                                                            <statement>actual = value</statement>
+                                                                            <statement>actual = round(float(value),5)</statement>
                                                                         </actionProperties>
                                                                     </item>
                                                                 </actionsWhenFalse>
@@ -7419,8 +7419,8 @@
                                                         <processorInfo ruleType="chart_as_xy">
                                                             <ruleProperties type="com.fnfr.svt.execution.charting.processors.ChartUsingXYPropertyGroup" chartName="Attempted vs Actual Mobility Registrations Rate - Nodal Instance [i]" style="LINE" xAxisLabel="Number of attempted Mobility Registrations Rate (HOs/sec)" yAxisLabel="Number of actual Mobility Registrations Rate (HOs/sec)" highlightDataPoint="true" series="Mobility Registrations Rate">
                                                                 <title>Attempted vs Actual Mobility Registrations Rate</title>
-                                                                <xValue>attempted</xValue>
-                                                                <yValue>actual</yValue>
+                                                                <xValue>round(float(attempted),5)</xValue>
+                                                                <yValue>round(float(actual),5)</yValue>
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>

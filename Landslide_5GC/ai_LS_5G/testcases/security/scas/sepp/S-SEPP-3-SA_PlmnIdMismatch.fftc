@@ -4749,7 +4749,7 @@
                 </item>
                 <item guid="8d83108c-56c0-4503-9b4e-9df6ab531169" action="eval" useFieldsInCommand="false">
                     <command>
-                        <body>file_path =info(&apos;tempDir&apos;) + output_file_name; print(file_path)</body>
+                        <body>file_path =info(&apos;tempDir&apos;, &apos;uri&apos;) + output_file_name; print(file_path)</body>
                     </command>
                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                 </item>
