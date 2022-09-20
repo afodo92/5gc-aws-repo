@@ -91,7 +91,7 @@
                                     <nestedSteps>
                                         <item guid="0d059191-31b6-4294-9d18-b0e7e754097f" action="eval" useFieldsInCommand="false">
                                             <command>
-                                                <body>node_test_session = &quot;I-EIR-1-CO-Equipment_identity_Check_SUT&quot;</body>
+                                                <body>node_test_session = &quot;I-EIR-1-CO-Equipment_Identity_Check_SUT&quot;</body>
                                             </command>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>

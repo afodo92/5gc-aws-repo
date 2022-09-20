@@ -3912,6 +3912,25 @@
                                                                             <command>
                                                                                 <body>kpi_pass = False</body>
                                                                             </command>
+                                                                            <postProcessing>
+                                                                                <analysisRules>
+                                                                                    <item>
+                                                                                        <extractorInfo extractorType="none">
+                                                                                            <extractorProperties type="com.fnfr.svt.documents.EmptyExtractorPropertyGroup"/>
+                                                                                        </extractorInfo>
+                                                                                        <processorInfo ruleType="assert">
+                                                                                            <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                                                                                <expression>False</expression>
+                                                                                                <actionsWhenFalse>
+                                                                                                    <item actionId="FailTest">
+                                                                                                        <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                                                    </item>
+                                                                                                </actionsWhenFalse>
+                                                                                            </ruleProperties>
+                                                                                        </processorInfo>
+                                                                                    </item>
+                                                                                </analysisRules>
+                                                                            </postProcessing>
                                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                                         </item>
                                                                     </nestedSteps>

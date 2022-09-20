@@ -427,6 +427,13 @@
                                         <processorInfo ruleType="assert">
                                             <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
                                                 <expression>int(value) &gt;= ts_groups_required</expression>
+                                                <actionsWhenTrue>
+                                                    <item actionId="Eval">
+                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
+                                                            <statement>instance_number = value</statement>
+                                                        </actionProperties>
+                                                    </item>
+                                                </actionsWhenTrue>
                                                 <actionsWhenFalse>
                                                     <item actionId="FailTest">
                                                         <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
@@ -602,7 +609,7 @@
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
-                        <item guid="006cb0f7-5e51-41d2-a4dc-48af141763ae" action="eval" useFieldsInCommand="false">
+                        <item guid="8ee32fac-f17c-4431-b69c-f6f937466c8e" action="eval" useFieldsInCommand="false">
                             <command>
                                 <body>params = params + &quot;;TC_parameters/Starting_SUPI:&lt;1,15&gt;:false;TC_parameters/Starting_IMEI:&lt;1,14&gt;:false;TC_parameters/Starting_SUPI:(1,999999999999999):false;TC_parameters/Starting_IMEI:(1,99999999999999):false&quot;</body>
                             </command>
@@ -1153,31 +1160,31 @@
                     </nestedSteps>
                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                 </item>
-                <item guid="c8086be7-3bd0-451b-b57c-8722805cf366" action="comment" useFieldsInCommand="false">
+                <item guid="39233ec8-e07f-44fb-9c01-95ceb541f248" action="comment" useFieldsInCommand="false">
                     <command>
                         <body>Validate min session capacity</body>
                     </command>
                     <nestedSteps>
-                        <item guid="7433658f-56eb-4c85-b88c-6340713b6a01" action="eval" useFieldsInCommand="false">
+                        <item guid="9defa126-c2e7-486e-ad0a-23cb87c69f87" action="eval" useFieldsInCommand="false">
                             <command>
                                 <body>expected_min_session= int(int(instance_number)*4)</body>
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
-                        <item guid="403bba51-43da-459f-ab44-63111abcc62b" action="if" useFieldsInCommand="false">
+                        <item guid="48fba236-0830-4f30-9139-bb8acce67047" action="if" useFieldsInCommand="false">
                             <command>
                                 <body>int(session_capacity) % ues_per_bucket != 0 and int(session_capacity) != expected_min_session :</body>
                             </command>
                             <nestedSteps>
-                                <item guid="2f7d280e-ea1c-4c20-acdd-13f6be8241bf" action="comment" useFieldsInCommand="false">
+                                <item guid="a8c507fd-9175-4e62-b56a-86741e47b273" action="comment" useFieldsInCommand="false">
                                     <command>
                                         <body>Insert steps here for when expression is true</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
-                                <item guid="391d0b3d-88be-47c0-903a-72c18210bbf2" action="message" useFieldsInCommand="false">
+                                <item guid="143de42f-0a2d-4745-849b-1b87441a5249" action="message" useFieldsInCommand="false">
                                     <command>
-                                        <body>Error:The number of UEs entered must be divisible by 1 Bucket or equal to [expected_min_session].</body>
+                                        <body>Error:The number of UEs entered must be divisible by 1 Bucket or equal to [expected_min_session]</body>
                                     </command>
                                     <postProcessing>
                                         <analysisRules>
@@ -1200,10 +1207,10 @@
                                     </postProcessing>
                                     <applicationProperties type="com.fnfr.svt.execution.builtin.exec.MessagePropertyGroup">
                                         <severity inherit="false">Error</severity>
-                                        <message inherit="false">The number of UEs entered must be divisible by 1 Bucket or equal to [expected_min_session].</message>
+                                        <message inherit="false">The number of UEs entered must be divisible by 1 Bucket or equal to [expected_min_session]</message>
                                     </applicationProperties>
                                 </item>
-                                <item guid="02d3cd41-4a51-423f-97cf-4093a814a2e2" action="exit" useFieldsInCommand="false">
+                                <item guid="45b33703-4a07-4e5d-be82-22354cd78c74" action="exit" useFieldsInCommand="false">
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
                             </nestedSteps>
@@ -3052,6 +3059,20 @@
                                             </nestedSteps>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>
+                                        <item guid="5647cebc-9932-48c4-8e45-26ee5b8bc65f" action="comment" useFieldsInCommand="false">
+                                            <command>
+                                                <body>Add &quot;---&quot;</body>
+                                            </command>
+                                            <nestedSteps>
+                                                <item guid="00560e50-c850-45b4-8d6e-7944cf0f6db3" action="call" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                                                    </command>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
+                                            </nestedSteps>
+                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                        </item>
                                     </nestedSteps>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3389,6 +3410,20 @@
                             </nestedSteps>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
+                        <item guid="7f06ea07-2fe5-48a7-bc54-d4922e159cc4" action="comment" useFieldsInCommand="false">
+                            <command>
+                                <body>Add &quot;---&quot;</body>
+                            </command>
+                            <nestedSteps>
+                                <item guid="09422d8b-9a55-4d81-ac1d-e2a0351c8bdd" action="call" useFieldsInCommand="false">
+                                    <command>
+                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                                    </command>
+                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                </item>
+                            </nestedSteps>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
                     </nestedSteps>
                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                 </item>
@@ -3634,20 +3669,6 @@
                                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                                 </item>
                                                             </nestedSteps>
-                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                        </item>
-                                                    </nestedSteps>
-                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                </item>
-                                                <item guid="a447ae68-5108-45cf-bea6-a4b18eb63ed8" action="comment" useFieldsInCommand="false">
-                                                    <command>
-                                                        <body>Add &quot;---&quot;</body>
-                                                    </command>
-                                                    <nestedSteps>
-                                                        <item guid="0df3c772-74e7-4609-b168-facc017022f5" action="call" useFieldsInCommand="false">
-                                                            <command>
-                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
-                                                            </command>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
                                                     </nestedSteps>
@@ -4373,6 +4394,28 @@
                                                             <command>
                                                                 <body>number_of_buckets += 1</body>
                                                             </command>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                    </nestedSteps>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
+                                                <item guid="3bf46270-706e-497d-ad7f-340163a7049b" action="if" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>kpi_result == &quot;FAIL&quot;:</body>
+                                                    </command>
+                                                    <nestedSteps>
+                                                        <item guid="9a931614-3d31-4759-b8ca-f8b4e7c178cc" action="comment" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>Add &quot;---&quot;</body>
+                                                            </command>
+                                                            <nestedSteps>
+                                                                <item guid="2e9c141c-a262-475e-baaa-36a7c6f1654b" action="call" useFieldsInCommand="false">
+                                                                    <command>
+                                                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                                                                    </command>
+                                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                                </item>
+                                                            </nestedSteps>
                                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                         </item>
                                                     </nestedSteps>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.1.0.202208130455">
+<testCase version="9.1.0.202206261803">
     <general>
         <documentation>A-SMF-UPF-5-PF: User Plane vs Mobility Decoupling - Performance Testing</documentation>
         <tags>R-3TS</tags>
@@ -1534,20 +1534,6 @@
                         <body>Show general info</body>
                     </command>
                     <nestedSteps>
-                        <item guid="c9bd2ab7-dc4a-41bc-9079-ce132367a136" action="comment" useFieldsInCommand="false" skippReporting="false">
-                            <command>
-                                <body>Add &quot;---&quot;</body>
-                            </command>
-                            <nestedSteps>
-                                <item guid="0f99f030-baad-476e-8b46-2a439199f473" action="call" useFieldsInCommand="false" skippReporting="false">
-                                    <command>
-                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
-                                    </command>
-                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                </item>
-                            </nestedSteps>
-                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                        </item>
                         <item guid="0257df73-2cac-4f1f-b641-ececfbdacb63" action="if" useFieldsInCommand="false">
                             <command>
                                 <body>sut_make:</body>
@@ -2548,6 +2534,14 @@
                                             </nestedSteps>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>
+                                        <item guid="32509268-9553-4448-b74d-d24de8b10f6f" action="message" useFieldsInCommand="false">
+                                            <command>
+                                                <body>Information:Apply the test with Mobility End Rate = &quot;[current_mobility_rate]&quot; HO(s)/sec, Session Capacity = &quot;[gget(&apos;cp_events_sessions&apos;)]&quot; session(s)</body>
+                                            </command>
+                                            <applicationProperties type="com.fnfr.svt.execution.builtin.exec.MessagePropertyGroup">
+                                                <message inherit="false">Apply the test with Mobility End Rate = &quot;[current_mobility_rate]&quot; HO(s)/sec, Session Capacity = &quot;[gget(&apos;cp_events_sessions&apos;)]&quot; session(s)</message>
+                                            </applicationProperties>
+                                        </item>
                                         <item guid="aaef8134-8983-4edd-8cf5-c9d7681103e8" action="call" useFieldsInCommand="false">
                                             <command>
                                                 <body>execute_nodal_tests -run_data_list [run_data_list] -session_act_rate [session_act_rate] -testserver_number [testserver_number] -is_b2b [is_b2b] -timeout [timeout] -current_mobility_rate [current_mobility_rate] -sba_running_id [sba_running_id] -running_node_id [running_node_id]</body>
@@ -3392,6 +3386,14 @@
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
+                        <item guid="1e1b2899-9a8f-465e-9606-0e945de168ff" action="message" useFieldsInCommand="false">
+                            <command>
+                                <body>Information:Apply the test with Mobility End Rate = &quot;[current_mobility_rate]&quot; HO(s)/sec, Session Capacity = &quot;[gget(&apos;cp_events_sessions&apos;)]&quot; session(s)</body>
+                            </command>
+                            <applicationProperties type="com.fnfr.svt.execution.builtin.exec.MessagePropertyGroup">
+                                <message inherit="false">Apply the test with Mobility End Rate = &quot;[current_mobility_rate]&quot; HO(s)/sec, Session Capacity = &quot;[gget(&apos;cp_events_sessions&apos;)]&quot; session(s)</message>
+                            </applicationProperties>
+                        </item>
                         <item guid="8ee18ac7-96de-46a8-bce5-c54115eb4a9c" action="call" useFieldsInCommand="false">
                             <command>
                                 <body>execute_nodal_tests -run_data_list [one_test] -current_mobility_rate [current_mobility_rate] -session_act_rate [session_act_rate] -testserver_number [testserver_number] -is_b2b [is_b2b] -timeout [timeout] -enable_port_capture [enable_port_capture] -sba_running_id [sba_running_id] -running_node_id [running_node_id]</body>
@@ -4017,6 +4019,14 @@
                                                         </item>
                                                     </nestedSteps>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
+                                                <item guid="42c3f7ce-05b2-47ad-a253-541c5970cf57" action="message" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>Information:Apply the test with Mobility End Rate = &quot;[current_mobility_rate]&quot; HO(s)/sec, Session Capacity = &quot;[gget(&apos;cp_events_sessions&apos;)]&quot; session(s)</body>
+                                                    </command>
+                                                    <applicationProperties type="com.fnfr.svt.execution.builtin.exec.MessagePropertyGroup">
+                                                        <message inherit="false">Apply the test with Mobility End Rate = &quot;[current_mobility_rate]&quot; HO(s)/sec, Session Capacity = &quot;[gget(&apos;cp_events_sessions&apos;)]&quot; session(s)</message>
+                                                    </applicationProperties>
                                                 </item>
                                                 <item guid="1901b7eb-3250-4f80-b203-3ce7fc0f0506" action="call" useFieldsInCommand="false">
                                                     <command>
@@ -5512,20 +5522,6 @@
                                                 <documentName inherit="false">kpis_response</documentName>
                                             </applicationProperties>
                                         </item>
-                                        <item guid="c7a15fcc-8af7-42dc-b25c-417b0bfe9678" action="comment" useFieldsInCommand="false" skippReporting="false">
-                                            <command>
-                                                <body>Add &quot;---&quot;</body>
-                                            </command>
-                                            <nestedSteps>
-                                                <item guid="a7fcfe7a-ebde-475a-b096-29e494b9511f" action="call" useFieldsInCommand="false" skippReporting="false">
-                                                    <command>
-                                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
-                                                    </command>
-                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                </item>
-                                            </nestedSteps>
-                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                        </item>
                                     </nestedSteps>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -6172,6 +6168,20 @@
                                 <storeResponseAt>response</storeResponseAt>
                                 <storeResponseText>true</storeResponseText>
                             </postProcessing>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="e4fe2a39-880a-4a56-be51-fc1cccfce789" action="comment" useFieldsInCommand="false" skippReporting="false">
+                    <command>
+                        <body>Add &quot;---&quot;</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="bad1e595-dfe3-4fd8-b007-e44802e08e7f" action="call" useFieldsInCommand="false" skippReporting="false">
+                            <command>
+                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 80</body>
+                            </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
                     </nestedSteps>
@@ -7554,6 +7564,20 @@
                                     </item>
                                 </analysisRules>
                             </postProcessing>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="98c9c711-bc40-4cec-aedd-31bd30001884" action="comment" useFieldsInCommand="false" skippReporting="false">
+                    <command>
+                        <body>Add &quot;---&quot;</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="4ba44756-22cc-428f-8235-c20d4d408776" action="call" useFieldsInCommand="false" skippReporting="false">
+                            <command>
+                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
+                            </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
                     </nestedSteps>

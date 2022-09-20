@@ -2810,6 +2810,20 @@
                                                     </nestedSteps>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </item>
+                                                <item guid="bfbb6678-e50d-40e8-894a-1a2148426620" action="comment" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>Add &quot;---&quot;</body>
+                                                    </command>
+                                                    <nestedSteps>
+                                                        <item guid="05f03542-0e38-4cef-9dd8-1a9415283eeb" action="call" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                                                            </command>
+                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                        </item>
+                                                    </nestedSteps>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
                                             </nestedSteps>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>
@@ -3585,20 +3599,6 @@
                                         <body>int(targeted_end_rate) &gt; 1:</body>
                                     </command>
                                     <nestedSteps>
-                                        <item guid="b5c61f22-145a-4846-9b79-602a7ad27c8c" action="comment" useFieldsInCommand="false">
-                                            <command>
-                                                <body>Add &quot;---&quot;</body>
-                                            </command>
-                                            <nestedSteps>
-                                                <item guid="5af3409d-3eae-4c9a-9b2e-d32de02c181b" action="call" useFieldsInCommand="false">
-                                                    <command>
-                                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
-                                                    </command>
-                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                </item>
-                                            </nestedSteps>
-                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                        </item>
                                         <item guid="28855c61-388c-4750-ab87-6f6adc8d938d" action="comment" useFieldsInCommand="false">
                                             <command>
                                                 <body>Run test instance with End Rate = 80% of Targeted End Rate</body>
@@ -4202,20 +4202,6 @@
                                                         <body>kpi_result == &quot;PASS&quot; and t_rate &lt; int(targeted_end_rate):</body>
                                                     </command>
                                                     <nestedSteps>
-                                                        <item guid="274a111c-b449-4576-97f7-c257d5447625" action="comment" useFieldsInCommand="false">
-                                                            <command>
-                                                                <body>Add &quot;---&quot;</body>
-                                                            </command>
-                                                            <nestedSteps>
-                                                                <item guid="aefc879f-fe92-4c27-a6f9-2bde452bbdfa" action="call" useFieldsInCommand="false">
-                                                                    <command>
-                                                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
-                                                                    </command>
-                                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                                </item>
-                                                            </nestedSteps>
-                                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                                        </item>
                                                         <item guid="81806d2a-09db-406e-b7e0-7603528ff348" action="eval" useFieldsInCommand="false">
                                                             <command>
                                                                 <body>array_index += 1</body>
@@ -5155,6 +5141,21 @@
                                                     <item>
                                                         <extractorInfo extractorType="query">
                                                             <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
+                                                                <query>boolean(mapped/Json/reason)</query>
+                                                            </extractorProperties>
+                                                        </extractorInfo>
+                                                        <processorInfo ruleType="store">
+                                                            <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
+                                                                <storageLocation>is_error_exist</storageLocation>
+                                                                <responseValue type="com.fnfr.documents.PropertyBoolean">false</responseValue>
+                                                                <variable type="com.fnfr.documents.PropertyBoolean">true</variable>
+                                                                <secret type="com.fnfr.documents.PropertyBoolean">false</secret>
+                                                            </ruleProperties>
+                                                        </processorInfo>
+                                                    </item>
+                                                    <item>
+                                                        <extractorInfo extractorType="query">
+                                                            <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
                                                                 <query>count(mapped/Json/runId)</query>
                                                             </extractorProperties>
                                                         </extractorInfo>
@@ -5196,6 +5197,42 @@
                                                             </ruleProperties>
                                                         </processorInfo>
                                                     </item>
+                                                    <item>
+                                                        <extractorInfo extractorType="query">
+                                                            <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
+                                                                <query>boolean(//errorsAndWarnings/item[contains(text(), &apos;SMF Nodal - Mobility Rate&apos;)])</query>
+                                                            </extractorProperties>
+                                                        </extractorInfo>
+                                                        <processorInfo ruleType="assert">
+                                                            <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                                                <expression>str(value) == &apos;true&apos;</expression>
+                                                                <actionsWhenTrue>
+                                                                    <item actionId="Eval">
+                                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
+                                                                            <statement>error = True</statement>
+                                                                        </actionProperties>
+                                                                    </item>
+                                                                    <item actionId="Eval">
+                                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
+                                                                            <statement>running_id_list.append(running_nodal_id)</statement>
+                                                                        </actionProperties>
+                                                                    </item>
+                                                                    <item actionId="Eval">
+                                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
+                                                                            <statement>error_msg = &quot;Mobility Rate {} is greater than maximum licensed value.&quot;.format(c_rate_ts)</statement>
+                                                                        </actionProperties>
+                                                                    </item>
+                                                                </actionsWhenTrue>
+                                                                <actionsWhenFalse>
+                                                                    <item actionId="Eval">
+                                                                        <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
+                                                                            <statement>error_msg = &quot;&quot;</statement>
+                                                                        </actionProperties>
+                                                                    </item>
+                                                                </actionsWhenFalse>
+                                                            </ruleProperties>
+                                                        </processorInfo>
+                                                    </item>
                                                 </analysisRules>
                                                 <storeResponseAt>response</storeResponseAt>
                                                 <storeResponseText>true</storeResponseText>
@@ -5211,6 +5248,24 @@
                                                     <command>
                                                         <body>running_nodal_ids = &quot;;&quot;.join(running_id_list)</body>
                                                     </command>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
+                                                <item guid="c62fde73-c415-46f5-8cc4-425c415fc4d2" action="if" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>str(is_error_exist).lower() == &quot;false&quot;:</body>
+                                                    </command>
+                                                    <nestedSteps>
+                                                        <item guid="9e0af31a-5070-48b4-ab53-9c98daa30b05" action="json" useFieldsInCommand="false">
+                                                            <command>
+                                                                <body>action=&apos;addJsonNode&apos;, editResponseStructure=&apos;false&apos;, documentName=&apos;response&apos;, pathValue=&apos;{&quot;/&quot;:{&quot;reason&quot;:&quot;[error_msg]&quot;}}&apos;</body>
+                                                            </command>
+                                                            <applicationProperties type="com.fnfr.svt.execution.builtin.json.JsonPropertiesGroup">
+                                                                <action inherit="false">addJsonNode</action>
+                                                                <pathValue inherit="false" sub="true">{&quot;/&quot;:{&quot;reason&quot;:&quot;[error_msg]&quot;}}</pathValue>
+                                                                <documentName inherit="false">response</documentName>
+                                                            </applicationProperties>
+                                                        </item>
+                                                    </nestedSteps>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </item>
                                                 <item guid="50013579-7419-4383-8e5b-60a4c2ddc981" action="json" useFieldsInCommand="false">
@@ -7311,7 +7366,7 @@
                     <nestedSteps>
                         <item guid="382120ac-e0d9-420f-aa68-8c175bc09002" action="call" useFieldsInCommand="false">
                             <command>
-                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
+                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 80</body>
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
@@ -8074,6 +8129,20 @@
                                     </applicationProperties>
                                 </item>
                             </nestedSteps>
+                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        </item>
+                    </nestedSteps>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+                <item guid="384386a8-61f5-4426-b82f-8b7797ae1433" action="comment" useFieldsInCommand="false">
+                    <command>
+                        <body>Add &quot;---&quot;</body>
+                    </command>
+                    <nestedSteps>
+                        <item guid="6dad2a73-dd51-4230-9764-3aab606c9193" action="call" useFieldsInCommand="false">
+                            <command>
+                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 135</body>
+                            </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
                     </nestedSteps>

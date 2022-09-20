@@ -3278,12 +3278,12 @@
                         </item>
                         <item guid="07e9cc49-6c9b-49c0-b959-11b0795fe740" action="comment" useFieldsInCommand="false">
                             <command>
-                                <body>UE Context Modification Response</body>
+                                <body>UE Context Modification Request</body>
                             </command>
                             <nestedSteps>
                                 <item guid="89e5d010-5e83-4164-9181-af7c86b23d9e" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;UE Context Modification Response&quot;</body>
+                                        <body>key_tag = &quot;UE Context Modification Request&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
@@ -3350,12 +3350,12 @@
                         </item>
                         <item guid="97041485-142a-4448-9d36-c4eab18a89da" action="comment" useFieldsInCommand="false">
                             <command>
-                                <body>UE Context Modification Request</body>
+                                <body>UE Context Modification Response</body>
                             </command>
                             <nestedSteps>
                                 <item guid="bfe7865f-4fc6-44c0-9220-349cd3e212eb" action="eval" useFieldsInCommand="false">
                                     <command>
-                                        <body>key_tag = &quot;UE Context Modification Request&quot;</body>
+                                        <body>key_tag = &quot;UE Context Modification Response&quot;</body>
                                     </command>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
