@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.1.0.202206081802">
+<testCase version="9.1.0.202208171942">
     <general>
         <documentation>S-AMF-15-SA:  UE Security Capabilities Handling at AMF (No Encryption Algorithm) - Security Testing</documentation>
         <tags>I-2TS</tags>
@@ -3024,7 +3024,7 @@
                         </item>
                         <item guid="eaca48b3-6d33-4018-bf99-73409280460d" action="eval" useFieldsInCommand="false">
                             <command>
-                                <body>amf_ip =param(&apos;LS_Emulated_SUT_favorite_params/ts0/tc0/AmfNodeAddr/ip&apos;, &apos;&apos;)</body>
+                                <body>amf_ip =param(&apos;LS_Emulated_SUT_favorite_params/ts0/tc0/AmfNodeAddr/ip&apos;, &apos;10.202.100.2&apos;)</body>
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
@@ -3034,44 +3034,10 @@
                             </command>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
-                        <item guid="9c4130a8-8c7b-4ed2-b73e-0b16d3797bcc" action="eval" useFieldsInCommand="false">
-                            <command>
-                                <body>amf_ip_dst=amf_ip_src=&quot;&quot;</body>
-                            </command>
-                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                        </item>
                         <item guid="e07c6ce1-c915-483c-813a-6543f3276c95" action="eval" useFieldsInCommand="false">
                             <command>
                                 <body>registration_request_id=1</body>
                             </command>
-                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                        </item>
-                        <item guid="bd13d286-6a5f-456b-bc09-068cef8a11ab" action="comment" useFieldsInCommand="false">
-                            <command>
-                                <body>Setup filter that contain ip.src and ip.dst from AMF node Ip</body>
-                            </command>
-                            <nestedSteps>
-                                <item guid="865bf1df-df9e-499f-b490-7b5bf198fef7" action="if" useFieldsInCommand="false">
-                                    <command>
-                                        <body>amf_ip:</body>
-                                    </command>
-                                    <nestedSteps>
-                                        <item guid="8c8f80be-a316-4180-b360-9acf0d39ba87" action="eval" useFieldsInCommand="false">
-                                            <command>
-                                                <body>amf_ip_dst=&quot; and &quot;+&quot;ip.dst == &quot;+amf_ip;print(amf_ip_dst)</body>
-                                            </command>
-                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                        </item>
-                                        <item guid="9e6e116b-fb59-41b9-b744-14c08f13adaf" action="eval" useFieldsInCommand="false">
-                                            <command>
-                                                <body>amf_ip_src=&quot; and &quot;+&quot;ip.src == &quot;+amf_ip;print(amf_ip_src)</body>
-                                            </command>
-                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                        </item>
-                                    </nestedSteps>
-                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                                </item>
-                            </nestedSteps>
                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                         </item>
                         <item guid="70363dff-d843-4c98-bc58-ca5f5f270a73" action="for" useFieldsInCommand="false">
@@ -3213,7 +3179,7 @@
                                                 </item>
                                                 <item guid="758de698-5fee-4749-99f5-216bb0d83eb4" action="command" session="s4">
                                                     <command>
-                                                        <body>query filter set &quot;nas_5gs.mm.message_type == 0x41 and ngap.procedureCode == 15 [amf_ip_dst]&quot;</body>
+                                                        <body>query filter set &quot;nas_5gs.mm.message_type == 0x41 and ngap.procedureCode == 15 and ip.dst == [amf_ip]&quot;</body>
                                                     </command>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </item>
@@ -3511,7 +3477,7 @@
                                                 </item>
                                                 <item guid="699a1e80-8cd5-4bca-abe4-1d169fe22199" action="command" session="s4">
                                                     <command>
-                                                        <body>query filter set &quot;nas_5gs.mm.message_type == 0x44 and frame.number &gt; [registration_request_id] and ngap.procedureCode == 4 [amf_ip_src]&quot;</body>
+                                                        <body>query filter set &quot;nas_5gs.mm.message_type == 0x44 and frame.number &gt; [registration_request_id] and ngap.procedureCode == 4 and ip.src == [amf_ip]&quot;</body>
                                                     </command>
                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                 </item>

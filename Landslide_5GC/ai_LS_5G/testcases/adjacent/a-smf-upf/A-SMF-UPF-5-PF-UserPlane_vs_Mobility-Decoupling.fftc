@@ -5474,6 +5474,20 @@
                                     </nestedSteps>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
+                                <item guid="ad211ed4-d132-4c90-b6c1-67343fc84480" action="comment" useFieldsInCommand="false" skippReporting="false">
+                                    <command>
+                                        <body>Add &quot;---&quot;</body>
+                                    </command>
+                                    <nestedSteps>
+                                        <item guid="0b0ed3bf-a4f8-4e5d-8436-89b3bbf6fe52" action="call" useFieldsInCommand="false" skippReporting="false">
+                                            <command>
+                                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 80</body>
+                                            </command>
+                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                        </item>
+                                    </nestedSteps>
+                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                </item>
                                 <item guid="a636dd24-23e1-4072-8f76-cfeb51184919" action="comment" useFieldsInCommand="false">
                                     <command>
                                         <body>Check SBA acceptance criteria and extract KPIs</body>
@@ -6173,20 +6187,6 @@
                     </nestedSteps>
                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                 </item>
-                <item guid="e4fe2a39-880a-4a56-be51-fc1cccfce789" action="comment" useFieldsInCommand="false" skippReporting="false">
-                    <command>
-                        <body>Add &quot;---&quot;</body>
-                    </command>
-                    <nestedSteps>
-                        <item guid="bad1e595-dfe3-4fd8-b007-e44802e08e7f" action="call" useFieldsInCommand="false" skippReporting="false">
-                            <command>
-                                <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -char - -length 80</body>
-                            </command>
-                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                        </item>
-                    </nestedSteps>
-                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
-                </item>
                 <item guid="756fb6ad-ed00-4dd8-ab05-caa7474ec14b" action="return">
                     <command>
                         <body>[response]</body>
@@ -6357,7 +6357,7 @@
                                                         </extractorInfo>
                                                         <processorInfo ruleType="assert">
                                                             <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
-                                                                <expression>value == &quot;&quot;</expression>
+                                                                <expression>value == &quot;&quot; or str(value).lower() == &quot;nan&quot;</expression>
                                                                 <actionsWhenTrue>
                                                                     <item actionId="Eval">
                                                                         <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
@@ -6383,7 +6383,7 @@
                                                         </extractorInfo>
                                                         <processorInfo ruleType="assert">
                                                             <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
-                                                                <expression>value == &quot;&quot;</expression>
+                                                                <expression>value == &quot;&quot; or str(value).lower() == &quot;nan&quot;</expression>
                                                                 <actionsWhenTrue>
                                                                     <item actionId="Eval">
                                                                         <actionProperties type="com.fnfr.svt.execution.builtin.actions.EvalActionPropertyGroup">
