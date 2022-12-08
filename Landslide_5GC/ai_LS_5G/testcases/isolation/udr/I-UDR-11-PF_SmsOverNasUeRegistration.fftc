@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testCase version="9.0.0.202203011533">
+<testCase version="9.2.0.202211031751">
     <general>
         <documentation>I-UDR-11-PF: Sms Over Nas Ue Registration - Performance Testing</documentation>
         <tags>N-3TS</tags>
@@ -2809,7 +2809,7 @@
                                     <nestedSteps>
                                         <item guid="1ab6ddea-a188-496c-8fd1-d5955ffc98e6" action="show_error_and_cleanup" session="s1" useFieldsInCommand="false">
                                             <command>
-                                                <body>-message [kpis_list] -set_test_fail false -running_sba_id [sba_running_id] -running_ids [optimistic_running_nodal_ids] -clean_up [clean_up]</body>
+                                                <body>-message [kpis_list] -set_test_fail false -running_ids [optimistic_running_nodal_ids] -clean_up [clean_up]</body>
                                             </command>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>
@@ -2819,11 +2819,37 @@
                                             </command>
                                             <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                         </item>
+                                        <item guid="bd083e72-63db-4171-87ed-ba5bba8a49fd" action="eval" useFieldsInCommand="false">
+                                            <command>
+                                                <body>clear_sba = &quot;true&quot;</body>
+                                            </command>
+                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                        </item>
+                                        <item guid="b0385c0a-bfe1-4a8a-a3c4-1c538111e327" action="comment" useFieldsInCommand="false">
+                                            <command>
+                                                <body>Add &quot;---&quot;</body>
+                                            </command>
+                                            <nestedSteps>
+                                                <item guid="b7214d05-b09d-4f21-a004-a6db05dac45a" action="call" useFieldsInCommand="false">
+                                                    <command>
+                                                        <body>project://ai_LS_5G/utility_library/utils.fftc#insert_devider_string -length 135</body>
+                                                    </command>
+                                                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                                </item>
+                                            </nestedSteps>
+                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                        </item>
                                     </nestedSteps>
                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                 </item>
                                 <item guid="dd1f53b7-b314-4da2-a6e6-6d2bc7794db7" action="else" useFieldsInCommand="false">
                                     <nestedSteps>
+                                        <item guid="efcb4646-b057-44f1-be0e-447f94438dfa" action="eval" useFieldsInCommand="false">
+                                            <command>
+                                                <body>clear_sba = &quot;false&quot;</body>
+                                            </command>
+                                            <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                        </item>
                                         <item guid="1d25f904-1942-4ce8-b3fa-f2a13a32ebf2" action="comment" useFieldsInCommand="false">
                                             <command>
                                                 <body>Add result to response</body>
@@ -2938,7 +2964,7 @@
                                 </item>
                                 <item guid="9f8f9bb3-301f-4cb4-adad-e6c6caa5ba8e" action="elif" useFieldsInCommand="false">
                                     <command>
-                                        <body>int(targeted_end_rate) == int(instance_number) and int(session_capacity) == int(instance_number):</body>
+                                        <body>int(targeted_end_rate) == int(instance_number) or int(session_capacity) == int(instance_number):</body>
                                     </command>
                                     <nestedSteps>
                                         <item guid="17ccefa2-f238-4808-b917-56279a53f779" action="if" useFieldsInCommand="false">
@@ -3151,7 +3177,7 @@
                                                             <nestedSteps>
                                                                 <item guid="70f3ff13-b4d5-42c7-ad0b-c06ebe04b32a" action="stop_or_abort_test" session="s1" useFieldsInCommand="false">
                                                                     <command>
-                                                                        <body>-running_id [sba_running_id] -abort [should_abort] -timeout [timeout]</body>
+                                                                        <body>-running_id [sba_running_id] -abort [should_abort] -timeout [timeout] -clean_up [clear_sba]</body>
                                                                     </command>
                                                                     <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
                                                                 </item>
